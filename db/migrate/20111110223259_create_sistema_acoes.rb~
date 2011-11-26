@@ -1,0 +1,10 @@
+class CreateSistemaAcoes < ActiveRecord::Migration
+  def change
+    create_table :sistema_acoes do |t|
+      t.string :nome
+      t.text :descricao
+
+      t.timestamps
+    end
+  end
+end

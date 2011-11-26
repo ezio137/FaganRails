@@ -8,3 +8,12 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'sessao', 'sessoes'
+  inflect.irregular 'perfil', 'perfis'
+  inflect.irregular 'acao', 'acoes'
+  inflect.irregular 'tipo_acao', 'tipos_acao'
+  inflect.irregular 'perfil_usuario', 'perfis_usuarios'
+  inflect.irregular 'acao_perfil', 'acoes_perfis'
+end

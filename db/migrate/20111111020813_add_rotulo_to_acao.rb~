@@ -1,0 +1,6 @@
+class AddRotuloToAcao < ActiveRecord::Migration
+  def change
+    add_column :acoes, :rotulo, :string
+    add_column :acoes, :ordem, :integer
+  end
+end

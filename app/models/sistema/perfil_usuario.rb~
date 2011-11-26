@@ -1,0 +1,2 @@
+class Sistema::PerfilUsuario < ActiveRecord::Base
+end

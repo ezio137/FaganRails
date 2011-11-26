@@ -1,0 +1,17 @@
+<%= form_for(@rh_turma) do |f| %>
+  <% if @rh_turma.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rh_turma.errors.count, "error") %> prohibited this rh_turma from being saved:</h2>
+
+      <ul>
+      <% @rh_turma.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Listing rh_turmas</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rh_turmas.each do |rh_turma| %>
+  <tr>
+    <td><%= link_to 'Show', rh_turma %></td>
+    <td><%= link_to 'Edit', edit_rh_turma_path(rh_turma) %></td>
+    <td><%= link_to 'Destroy', rh_turma, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Turma', new_rh_turma_path %>

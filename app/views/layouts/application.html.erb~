@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fagan</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div id="page">
+		<header id="header" class="pageWidth">
+			<div id="logo">
+				<a href="."><%= image_tag "/images/Fagan.jpg" %></a>
+			</div>
+			<nav id="headerMenu">
+				<ul id="menu">
+				<% for modulo in modulos %>
+					<li class="menuItem"><%= modulo.rotulo %></li>
+				<% end %>
+				</ul>
+			</nav>
+			<div id="login">
+				<% usuario = usuario_atual %>
+				<% if usuario %>
+					<div id="user">
+						<%= usuario.login %>
+					</div>
+					<div id="loginAction">
+						<%= link_to "Logout", "/logout" %>
+					</div>
+				<% else %>
+					<div id="loginAction">
+						<%= link_to "Login", "/login" %>
+					</div>
+				<% end %>
+			</div>
+		</header>
+		<div id="main" class="pageWidth">
+			<nav id="left">
+				<ul id="context">
+				</ul>
+			</nav>
+			<div id="body">
+				
+<%= yield %>
+
+			</div>
+		</div>
+		<footer id="footer" class="pageWidth">
+			<span>Desenvolvido por ezio137</span>
+		</footer>
+	</div>
+
+</body>
+</html>

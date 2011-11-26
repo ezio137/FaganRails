@@ -1,0 +1,2 @@
+module Rh::TurmasHelper
+end

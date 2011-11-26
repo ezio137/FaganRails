@@ -1,4 +1,13 @@
 FaganRails::Application.routes.draw do
+	resources :sessions
+  namespace :rh do resources :turmas end
+  namespace :sistema do resources :usuarios end
+  
+  match "login" => "sessions#new"
+  match "logout" => "sessions#destroy"
+    
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

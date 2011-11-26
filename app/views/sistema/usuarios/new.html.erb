@@ -1,0 +1,27 @@
+<%= form_for @usuario do |f| %>
+	<% if @usuario.errors.any? %>
+		<div class="error_messages">
+			<h2>Formul&aacute;rio inv&aacute;lido</h2>
+			<ul>
+				<% for message in @usuario.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="field">
+		<%= f.label :login %>
+		<%= f.text_field :login %>
+	</div>
+	<div class="field">
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</div>
+	<div class="field">
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

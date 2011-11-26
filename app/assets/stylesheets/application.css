@@ -5,3 +5,272 @@
  *= require_self
  *= require_tree . 
 */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+	font-family: monospace;
+	color: #227744;
+	font-size: 90%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+.selectable, .clickable, .itemViewerButton {
+	cursor: pointer;
+}
+
+.itemViewerButton.disabled {
+	cursor: default;
+}
+
+.pageWidth {
+	width: 95%;
+	margin: auto;
+	max-width: 1200px;
+	min-width: 600px;
+}
+
+#page {
+
+}
+
+#header {
+	font-style: italic;
+	font-weight: bold;
+	height: 80px;
+	background-color: #227744;
+	color: #ffffff;
+}
+
+#header a, #header a:visited, #footer a, #footer a:visited, #left a, #left a:visited {
+	color: #ffffff;
+}
+
+#main {
+	min-height: 220px;
+}
+
+#footer {
+	background-color: #227744;
+	color: #ffffff;
+	height: 30px;
+	text-align: center;
+}
+
+#footer span {
+	font-size: 1em;
+	font-style: italic;
+}
+
+#header, #main, #footer {
+	display: block;
+	clear: both;
+}
+
+#left {
+	clear: both;
+	float: left;
+	width: 170px;
+	background-color: #66bb88;
+	color: #ffffff;
+	min-height: 200px;
+	margin: 10px 0;
+	border-radius: 7px;
+}
+
+#header .selected, #left .selected {
+	background-color: #ffffff;
+	color: #227744;
+}
+
+#logo {
+	letter-spacing: 1px;
+	float: left;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+#logo img {
+	height: 70px;
+	width: 160px;
+	border-style: none;
+}
+
+#menu {
+	text-transform: uppercase;
+	font-size: 1.2em;
+	float: left;
+	height: 80px;
+}
+
+.menuItem {
+	letter-spacing: 1px;
+	border-style: double;
+	border-bottom-style: none;
+	border-radius: 7px 7px 0 0;
+	text-align: center;
+	padding: 7px 0 0 0;
+	margin: 50px 0 0 5px;
+	height: 20px;
+	width: 100px;
+	float: left;
+	border-width: 3px;
+}
+
+#context {
+	float: right;
+	padding: 15px 0 15px 0;
+}
+
+#menu, #context, .contentMenuRow {
+	list-style-type: none;
+}
+
+.contextItem {
+	text-align: right;
+	padding: 0 5px;
+	border-radius: 4px 0 0 4px;
+}
+
+.menuItem:hover, .contextItem:hover, .contentMenuItem:hover {
+	background-color: #99ddbb;
+	color: #227744;
+}
+
+#login {
+	float: right;
+	height: 30px;
+	width: 150px;
+	position: relative;
+	padding: 5px;
+}
+
+#user, #loginAction {
+	float: right;
+	clear: both;
+}
+
+#body {
+	margin: 10px;
+	float: left;
+	min-height: 200px;
+}
+
+#content {
+	
+}
+
+#contentMenu {
+	text-transform: uppercase;
+}
+
+.contentMenuRow {
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+
+.contentMenuItem {
+	height: 20px;
+	width: 160px;
+	margin: 0;
+	padding: 0;
+	float: left;
+	text-align: center;
+	padding: 30px 0;
+}
+
+#grid {
+	border-collapse: collapse;
+}
+
+#grid tbody tr {
+	border-top-style: dotted;
+	border-top-color: #227744;
+	border-top-width: 1px; 
+}
+
+#grid tbody tr.gridItemEven {
+	background-color: #eeffee;
+}
+
+#grid tbody tr:hover {
+	background-color: #dddddd;
+}
+
+#grid tbody tr.lastItem {
+	border-bottom-style: dotted;
+	border-bottom-color: #227744;
+	border-bottom-width: 1px;
+}
+
+#grid thead tr th, #grid tbody tr td {
+	width: 100px;
+}
+
+#itemViewer {
+	border: 1px;
+	border-color: #227744;
+	border-style: solid;
+	border-radius: 7px;
+	padding: 10px;
+	width: 80%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 150px;
+	min-width: 500px;
+}
+
+.errorMsg {
+	color: #aa0000;
+}
+
+#loginForm .label {
+	width: 70px;
+	text-align: right;
+	display: inline-block;
+}
+
+#loginForm input[type="submit"] {
+	float: right;
+}
+
+#itemViewerButtons .itemViewerButton {
+	float: left;
+	margin: 6px;
+	padding: 6px;
+	background-color: #227744;
+	color: #ffffff;
+	min-width: 70px;
+	text-align: center;
+	border-radius: 2px;
+}
+
+#itemViewer .disabled {
+	background-color: #668877;
+	color: #224433;
+}
+
+#itemViewerButtons .itemViewerButton:not(.disabled):hover {
+	background-color: #99ddbb;
+	color: #227744;
+}
+
+#itemViewerFields {
+	clear: both;
+	text-align: right;
+}
