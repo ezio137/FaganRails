@@ -1,0 +1,30 @@
+<%= form_for(@financeiro_banco) do |f| %>
+  <% if @financeiro_banco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@financeiro_banco.errors.count, "erro") %> impediram este Banco de ser salvo:</h2>
+
+      <ul>
+      <% @financeiro_banco.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+  	<%= f.label :nome %>
+  	<%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %>
+    <%= f.text_field :numero %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+<% end %>

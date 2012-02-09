@@ -1,11 +1,18 @@
 FaganRails::Application.routes.draw do
+  namespace :financeiro do resources :transacoes end
+
+  resources :financeiro, :sistema, :contabil, :rh, :mercado, :agro, :compras
 	resources :sessions
+	
+  namespace :financeiro do resources :bancos end
+  namespace :financeiro do resources :contas end
   namespace :rh do resources :turmas end
   namespace :sistema do resources :usuarios end
-  
+  namespace :sistema do resources :acoes end
+
   match "login" => "sessions#new"
   match "logout" => "sessions#destroy"
-    
+  
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

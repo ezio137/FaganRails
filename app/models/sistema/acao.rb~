@@ -1,3 +1,0 @@
-class Sistema::Acao < ActiveRecord::Base
-	belongs_to :tipo_acao
-end

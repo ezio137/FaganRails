@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  taxa: 9.99
+  prazo: 1
+
+two:
+  taxa: 9.99
+  prazo: 1

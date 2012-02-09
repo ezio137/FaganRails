@@ -1,8 +1,0 @@
-class CreateSistemaPerfisUsuarios < ActiveRecord::Migration
-  def change
-    create_table :sistema_perfis_usuarios do |t|
-
-      t.timestamps
-    end
-  end
-end

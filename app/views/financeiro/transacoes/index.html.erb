@@ -1,0 +1,21 @@
+<h1>financeiro_transacoes</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @financeiro_transacoes.each do |financeiro_transacao| %>
+  <tr>
+    <td><%= link_to 'Mostrar', financeiro_transacao %></td>
+    <td><%= link_to 'Editar', edit_financeiro_transacao_path(financeiro_transacao) %></td>
+    <td><%= link_to 'Excluir', financeiro_transacao, confirm: 'Tem certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo Transacao', new_financeiro_transacao_path %>

@@ -1,0 +1,2 @@
+module Financeiro::TransacoesHelper
+end

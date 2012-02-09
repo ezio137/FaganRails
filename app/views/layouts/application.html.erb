@@ -17,12 +17,12 @@
 				<ul id="menu">
 				<% if modulos %>
 					<% for modulo in modulos %>
-						<li class="menuItem"><%= modulo.rotulo %></li>
+						<li class="menuItem"><%= link_to modulo.rotulo, "/#{modulo.nome}" %></li>
 					<% end %>
 				<% end %>
 				</ul>
 			</nav>
-			<div id="login">
+			<div id="headerLogin">
 				<% usuario = usuario_atual %>
 				<% if usuario %>
 					<div id="user">

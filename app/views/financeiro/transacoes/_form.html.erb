@@ -1,0 +1,17 @@
+<%= form_for(@financeiro_transacao) do |f| %>
+  <% if @financeiro_transacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@financeiro_transacao.errors.count, "error") %> impediram este financeiro_transacao de ser salvo:</h2>
+
+      <ul>
+      <% @financeiro_transacao.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

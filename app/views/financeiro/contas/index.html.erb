@@ -1,0 +1,21 @@
+<div class="bodyTitle">Contas</div>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @financeiro_contas.each do |financeiro_conta| %>
+  <tr>
+    <td><%= link_to 'Ver', financeiro_conta %></td>
+    <td><%= link_to 'Editar', edit_financeiro_conta_path(financeiro_conta) %></td>
+    <td><%= link_to 'Excluir', financeiro_conta, confirm: 'Tem certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova conta', new_financeiro_conta_path %>

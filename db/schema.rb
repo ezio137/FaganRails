@@ -11,7 +11,54 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111125024618) do
+ActiveRecord::Schema.define(:version => 20111221005729) do
+
+  create_table "financeiro_bancos", :force => true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.string   "numero"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "financeiro_conta", :force => true do |t|
+    t.string   "nome"
+    t.string   "agencia"
+    t.string   "numero"
+    t.decimal  "saldo",         :precision => 10, :scale => 0
+    t.decimal  "limite",        :precision => 10, :scale => 0
+    t.date     "data_abertura"
+    t.integer  "banco_id"
+    t.integer  "tipo_conta_id"
+    t.string   "type"
+    t.decimal  "taxa",          :precision => 10, :scale => 0
+    t.integer  "prazo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "financeiro_contas", :force => true do |t|
+    t.string   "nome"
+    t.string   "agencia"
+    t.string   "numero"
+    t.decimal  "saldo",         :precision => 10, :scale => 0
+    t.decimal  "limite",        :precision => 10, :scale => 0
+    t.date     "data_abertura"
+    t.integer  "banco_id"
+    t.integer  "tipo_conta_id"
+    t.string   "type"
+    t.decimal  "taxa",          :precision => 10, :scale => 0
+    t.integer  "prazo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "financeiro_tipos_conta", :force => true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rh_turmas", :force => true do |t|
     t.datetime "created_at"
