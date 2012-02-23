@@ -1,51 +1,32 @@
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
-  # GET <%= route_url %>
-  # GET <%= route_url %>.json
+  respond_to :html, :xml, :js
+  
   def index
     @<%= plural_table_name %> = <%= orm_class.all(class_name) %>
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render <%= key_value :json, "@#{plural_table_name}" %> }
-    end
+    respond_with @<%= plural_table_name %>
   end
 
-  # GET <%= route_url %>/1
-  # GET <%= route_url %>/1.json
   def show
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render <%= key_value :json, "@#{singular_table_name}" %> }
-    end
+    respond_with @<%= singular_table_name %>
   end
 
-  # GET <%= route_url %>/new
-  # GET <%= route_url %>/new.json
   def new
     @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render <%= key_value :json, "@#{singular_table_name}" %> }
-    end
+    respond_with <%= singular_table_name %>
   end
 
-  # GET <%= route_url %>/1/edit
   def edit
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
   end
 
-  # POST <%= route_url %>
-  # POST <%= route_url %>.json
   def create
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "params[:#{singular_table_name}]") %>
 
     respond_to do |format|
-      if @<%= orm_instance.save %>
-        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} was successfully created.'" %> }
+        if @<%= orm_instance.save %>
+        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} foi criado com sucesso.'" %> }
         format.json { render <%= key_value :json, "@#{singular_table_name}" %>, <%= key_value :status, ':created' %>, <%= key_value :location, "@#{singular_table_name}" %> }
       else
         format.html { render <%= key_value :action, '"new"' %> }
@@ -61,7 +42,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
     respond_to do |format|
       if @<%= orm_instance.update_attributes("params[:#{singular_table_name}]") %>
-        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} was successfully updated.'" %> }
+        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} foi atualizado com sucesso.'" %> }
         format.json { head :no_content }
       else
         format.html { render <%= key_value :action, '"edit"' %> }

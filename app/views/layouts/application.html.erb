@@ -1,3 +1,4 @@
+<% puts  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 				<ul id="menu">
 				<% if modulos %>
 					<% for modulo in modulos %>
-						<li class="menuItem"><%= link_to modulo.rotulo, "/#{modulo.nome}" %></li>
+					   <%= link_to ("<li class='menuItem" << "' >" << modulo.rotulo << "</li>").html_safe, send(modulo.nome << "_path") %>
 					<% end %>
 				<% end %>
 				</ul>
@@ -41,6 +42,11 @@
 		<div id="main" class="pageWidth">
 			<nav id="left">
 				<ul id="context">
+				    <% if submodulos %>
+                        <% for submodulo in submodulos %>
+                            <%= link_to ("<li class='contextItem" << "' >" << submodulo.rotulo << "</li>").html_safe, send(session[:modulo] + "_" + submodulo.nome + "_path") %>
+                        <% end %>
+                    <% end %>
 				</ul>
 			</nav>
 			<div id="body">

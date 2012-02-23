@@ -1,4 +1,4 @@
-<h1>Listing financeiro_bancos</h1>
+<h1>Bancos</h1>
 
 <table>
   <tr>
@@ -9,17 +9,17 @@
     <th></th>
   </tr>
 
-<% @financeiro_bancos.each do |financeiro_banco| %>
+<% @bancos.each do |banco| %>
   <tr>
-    <td><%= financeiro_banco.nome %></td>
-    <td><%= financeiro_banco.numero %></td>
-    <td><%= link_to 'Show', financeiro_banco %></td>
-    <td><%= link_to 'Edit', edit_financeiro_banco_path(financeiro_banco) %></td>
-    <td><%= link_to 'Destroy', financeiro_banco, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= banco.nome %></td>
+    <td><%= banco.numero %></td>
+    <td><%= link_to 'Exibir', banco %></td>
+    <td><%= link_to 'Editar', edit_financeiro_banco_path(banco) %></td>
+    <td><%= link_to 'Excluir', banco, confirm: 'Tem certeza?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Banco', new_financeiro_banco_path %>
+<%= link_to 'Novo Banco', new_financeiro_banco_path %>

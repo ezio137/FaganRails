@@ -1,10 +1,10 @@
-<%= form_for(@financeiro_banco) do |f| %>
-  <% if @financeiro_banco.errors.any? %>
+<%= form_for(@banco) do |f| %>
+  <% if @banco.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@financeiro_banco.errors.count, "erro") %> impediram este Banco de ser salvo:</h2>
+      <h2><%= pluralize(@banco.errors.count, "erro") %> impediram este Banco de ser salvo:</h2>
 
       <ul>
-      <% @financeiro_banco.errors.full_messages.each do |msg| %>
+      <% @banco.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

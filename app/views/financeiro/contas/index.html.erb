@@ -7,11 +7,11 @@
     <th></th>
   </tr>
 
-<% @financeiro_contas.each do |financeiro_conta| %>
+<% @contas.each do |conta| %>
   <tr>
-    <td><%= link_to 'Ver', financeiro_conta %></td>
-    <td><%= link_to 'Editar', edit_financeiro_conta_path(financeiro_conta) %></td>
-    <td><%= link_to 'Excluir', financeiro_conta, confirm: 'Tem certeza?', method: :delete %></td>
+    <td><%= link_to 'Exibir', conta %></td>
+    <td><%= link_to 'Editar', edit_financeiro_conta_path(conta) %></td>
+    <td><%= link_to 'Excluir', conta, confirm: 'Tem certeza?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
