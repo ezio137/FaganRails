@@ -1,4 +1,3 @@
-<% puts  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 	<div id="page">
 		<header id="header" class="pageWidth">
 			<div id="logo">
@@ -18,7 +16,8 @@
 				<ul id="menu">
 				<% if modulos %>
 					<% for modulo in modulos %>
-					   <%= link_to ("<li class='menuItem" << "' >" << modulo.rotulo << "</li>").html_safe, send(modulo.nome << "_path") %>
+					   <% puts modulo.nome + "; " + session[:modulo] %>
+					   <%= link_to ("<li class='menuItem" << if modulo.nome == session[:modulo] then " selected" else "" end << "' >" << modulo.rotulo << "</li>").html_safe, send(modulo.nome << "_path") %>
 					<% end %>
 				<% end %>
 				</ul>

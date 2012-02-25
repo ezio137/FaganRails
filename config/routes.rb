@@ -1,6 +1,6 @@
 FaganRails::Application.routes.draw do
 
-	resources :sessions
+	resource :sessions
 	
   namespace :financeiro do resources :transacoes end
   namespace :financeiro do resources :bancos end
