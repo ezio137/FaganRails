@@ -18,43 +18,24 @@ class Financeiro::ContasController < ApplicationController
 
   def edit
     @conta = Financeiro::Conta.find(params[:id])
+    respond_with @conta
   end
 
   def create
     @conta = Financeiro::Conta.new(params[:conta])
-
-    respond_to do |format|
-      if @conta.save
-        format.html { redirect_to @conta, notice: 'Conta foi criada com sucesso.' }
-        format.json { render json: @conta, status: :created, location: @conta }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @conta.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Conta foi criada com sucesso.' if @conta.save
+    respond_with @conta
   end
 
   def update
     @conta = Financeiro::Conta.find(params[:id])
-
-    respond_to do |format|
-      if @conta.update_attributes(params[:conta])
-        format.html { redirect_to @conta, notice: 'Conta foi atualizada com sucesso.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @conta.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Conta foi atualizada com sucesso.' if @conta.update_attributes(params[:conta])
+    respond_with @conta
   end
 
   def destroy
     @conta = Financeiro::Conta.find(params[:id])
     @conta.destroy
-
-    respond_to do |format|
-      format.html { redirect_to financeiro_contas_url }
-      format.json { head :ok }
-    end
+    respond_with @conta
   end
 end
