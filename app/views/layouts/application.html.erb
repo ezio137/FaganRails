@@ -16,7 +16,6 @@
 				<ul id="menu">
 				<% if modulos %>
 					<% for modulo in modulos %>
-					   <% puts modulo.nome + "; " + session[:modulo] %>
 					   <%= link_to ("<li class='menuItem" << if modulo.nome == session[:modulo] then " selected" else "" end << "' >" << modulo.rotulo << "</li>").html_safe, send(modulo.nome << "_path") %>
 					<% end %>
 				<% end %>

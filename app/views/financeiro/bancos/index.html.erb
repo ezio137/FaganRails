@@ -1,23 +1,23 @@
 <h1>Bancos</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="grid">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @bancos.each do |banco| %>
-  <tr>
-    <td><%= banco.nome %></td>
-    <td><%= banco.numero %></td>
-    <td><%= link_to 'Exibir', banco %></td>
-    <td><%= link_to 'Editar', edit_financeiro_banco_path(banco) %></td>
-    <td><%= link_to 'Excluir', banco, confirm: 'Tem certeza?', method: :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+  <% @bancos.each do |banco| %>
+    <tr>
+      <td><%= link_to banco.nome, edit_financeiro_banco_path(banco) %></td>
+      <td><%= banco.numero %></td>
+      <td><%= link_to 'Excluir', banco, confirm: 'Tem certeza?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>    
 </table>
 
 <br />

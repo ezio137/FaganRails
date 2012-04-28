@@ -27,8 +27,6 @@ class Financeiro::BancosController < ApplicationController
     respond_with @banco
   end
 
-  # PUT /financeiro/bancos/1
-  # PUT /financeiro/bancos/1.json
   def update
     @banco = Financeiro::Banco.find(params[:id])
     flash[:notice] = 'Banco foi atualizado com sucesso.' if @banco.update_attributes(params[:banco])
