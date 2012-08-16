@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20111221005729) do
     t.string   "nome"
     t.text     "descricao"
     t.string   "numero"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "financeiro_conta", :force => true do |t|
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20111221005729) do
     t.string   "type"
     t.decimal  "taxa",          :precision => 10, :scale => 0
     t.integer  "prazo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   create_table "financeiro_contas", :force => true do |t|
@@ -49,20 +49,20 @@ ActiveRecord::Schema.define(:version => 20111221005729) do
     t.string   "type"
     t.decimal  "taxa",          :precision => 10, :scale => 0
     t.integer  "prazo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   create_table "financeiro_tipos_conta", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rh_turmas", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sistema_acoes", :force => true do |t|
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(:version => 20111221005729) do
     t.text     "descricao"
     t.integer  "tipo_acao_id"
     t.integer  "acao_pai_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "rotulo"
     t.integer  "ordem"
   end
@@ -79,36 +79,36 @@ ActiveRecord::Schema.define(:version => 20111221005729) do
   create_table "sistema_acoes_perfis", :force => true do |t|
     t.integer  "acao_id"
     t.integer  "perfil_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sistema_perfis", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sistema_perfis_usuarios", :force => true do |t|
     t.integer  "perfil_id"
     t.integer  "usuario_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sistema_tipos_acao", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sistema_usuarios", :force => true do |t|
     t.string   "login"
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
