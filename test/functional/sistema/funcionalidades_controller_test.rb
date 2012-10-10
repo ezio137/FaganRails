@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Sistema::AcaoTest < ActiveSupport::TestCase
+class FuncionalidadesControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

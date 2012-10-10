@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Sistema::AcaoPerfilTest < ActiveSupport::TestCase
+class ContaFinanceiraTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

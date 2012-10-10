@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Sistema::PerfilUsuarioTest < ActiveSupport::TestCase
+class PerfilUsuarioTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

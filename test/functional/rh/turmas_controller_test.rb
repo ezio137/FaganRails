@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class Rh::TurmasControllerTest < ActionController::TestCase
+class TurmasControllerTest < ActionController::TestCase
   setup do
-    @rh_turma = rh_turmas(:one)
+    @turma = turmas(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:rh_turmas)
+    assert_not_nil assigns(:turmas)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class Rh::TurmasControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create rh_turma" do
-    assert_difference('Rh::Turma.count') do
-      post :create, rh_turma: @rh_turma.attributes
+  test "should create turma" do
+    assert_difference('Turma.count') do
+      post :create, :turma => @turma.attributes
     end
 
-    assert_redirected_to rh_turma_path(assigns(:rh_turma))
+    assert_redirected_to turma_path(assigns(:turma))
   end
 
-  test "should show rh_turma" do
-    get :show, id: @rh_turma.to_param
+  test "should show turma" do
+    get :show, :id => @turma.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @rh_turma.to_param
+    get :edit, :id => @turma.to_param
     assert_response :success
   end
 
-  test "should update rh_turma" do
-    put :update, id: @rh_turma.to_param, rh_turma: @rh_turma.attributes
-    assert_redirected_to rh_turma_path(assigns(:rh_turma))
+  test "should update turma" do
+    put :update, :id => @turma.to_param, :turma => @turma.attributes
+    assert_redirected_to turma_path(assigns(:turma))
   end
 
-  test "should destroy rh_turma" do
-    assert_difference('Rh::Turma.count', -1) do
-      delete :destroy, id: @rh_turma.to_param
+  test "should destroy turma" do
+    assert_difference('Turma.count', -1) do
+      delete :destroy, :id => @turma.to_param
     end
 
-    assert_redirected_to rh_turmas_path
+    assert_redirected_to turmas_path
   end
 end

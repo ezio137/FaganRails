@@ -1,2 +1,2 @@
-class Financeiro::Emprestimo < Financeiro::Conta
+class Emprestimo < ContaFinanceira
 end

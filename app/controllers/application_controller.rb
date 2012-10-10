@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :need_login, unless: -> {
+  before_filter :need_login, :unless => lambda { |controller|
     controller_name == 'sessions' || controller_name == 'home'
   }
   

@@ -1,8 +1,8 @@
-class Rh::TurmasController < ApplicationController
+class TurmasController < ApplicationController
   # GET /rh/turmas
   # GET /rh/turmas.json
   def index
-    @rh_turmas = Rh::Turma.all
+    @rh_turmas = Turma.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Rh::TurmasController < ApplicationController
   # GET /rh/turmas/1
   # GET /rh/turmas/1.json
   def show
-    @rh_turma = Rh::Turma.find(params[:id])
+    @rh_turma = Turma.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class Rh::TurmasController < ApplicationController
   # GET /rh/turmas/new
   # GET /rh/turmas/new.json
   def new
-    @rh_turma = Rh::Turma.new
+    @rh_turma = Turma.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class Rh::TurmasController < ApplicationController
 
   # GET /rh/turmas/1/edit
   def edit
-    @rh_turma = Rh::Turma.find(params[:id])
+    @rh_turma = Turma.find(params[:id])
   end
 
   # POST /rh/turmas
   # POST /rh/turmas.json
   def create
-    @rh_turma = Rh::Turma.new(params[:rh_turma])
+    @rh_turma = Turma.new(params[:rh_turma])
 
     respond_to do |format|
       if @rh_turma.save
@@ -56,7 +56,7 @@ class Rh::TurmasController < ApplicationController
   # PUT /rh/turmas/1
   # PUT /rh/turmas/1.json
   def update
-    @rh_turma = Rh::Turma.find(params[:id])
+    @rh_turma = Turma.find(params[:id])
 
     respond_to do |format|
       if @rh_turma.update_attributes(params[:rh_turma])
@@ -72,7 +72,7 @@ class Rh::TurmasController < ApplicationController
   # DELETE /rh/turmas/1
   # DELETE /rh/turmas/1.json
   def destroy
-    @rh_turma = Rh::Turma.find(params[:id])
+    @rh_turma = Turma.find(params[:id])
     @rh_turma.destroy
 
     respond_to do |format|

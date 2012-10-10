@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111221005729) do
+ActiveRecord::Schema.define(:version => 20121006181234) do
 
-  create_table "financeiro_bancos", :force => true do |t|
+  create_table "bancos", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
     t.string   "numero"
@@ -21,90 +21,79 @@ ActiveRecord::Schema.define(:version => 20111221005729) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "financeiro_conta", :force => true do |t|
+  create_table "contas_financeiras", :force => true do |t|
     t.string   "nome"
     t.string   "agencia"
     t.string   "numero"
-    t.decimal  "saldo",         :precision => 10, :scale => 0
-    t.decimal  "limite",        :precision => 10, :scale => 0
+    t.decimal  "saldo",                    :precision => 10, :scale => 0
+    t.decimal  "limite",                   :precision => 10, :scale => 0
     t.date     "data_abertura"
     t.integer  "banco_id"
-    t.integer  "tipo_conta_id"
+    t.integer  "tipo_conta_financeira_id"
     t.string   "type"
-    t.decimal  "taxa",          :precision => 10, :scale => 0
+    t.decimal  "taxa",                     :precision => 10, :scale => 0
     t.integer  "prazo"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
   end
 
-  create_table "financeiro_contas", :force => true do |t|
-    t.string   "nome"
-    t.string   "agencia"
-    t.string   "numero"
-    t.decimal  "saldo",         :precision => 10, :scale => 0
-    t.decimal  "limite",        :precision => 10, :scale => 0
-    t.date     "data_abertura"
-    t.integer  "banco_id"
-    t.integer  "tipo_conta_id"
-    t.string   "type"
-    t.decimal  "taxa",          :precision => 10, :scale => 0
-    t.integer  "prazo"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-  end
-
-  create_table "financeiro_tipos_conta", :force => true do |t|
+  create_table "funcionalidades", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "rh_turmas", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "sistema_acoes", :force => true do |t|
-    t.string   "nome"
-    t.text     "descricao"
-    t.integer  "tipo_acao_id"
-    t.integer  "acao_pai_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "tipo_funcionalidade_id"
+    t.integer  "funcionalidade_pai_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "rotulo"
     t.integer  "ordem"
   end
 
-  create_table "sistema_acoes_perfis", :force => true do |t|
-    t.integer  "acao_id"
+  create_table "funcionalidades_perfis", :force => true do |t|
+    t.integer  "funcionalidade_id"
     t.integer  "perfil_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
-  create_table "sistema_perfis", :force => true do |t|
+  create_table "perfis", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "sistema_perfis_usuarios", :force => true do |t|
+  create_table "perfis_usuarios", :force => true do |t|
     t.integer  "perfil_id"
     t.integer  "usuario_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "sistema_tipos_acao", :force => true do |t|
+  create_table "tipos_conta_financeira", :force => true do |t|
     t.string   "nome"
     t.text     "descricao"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "sistema_usuarios", :force => true do |t|
+  create_table "tipos_funcionalidade", :force => true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "transacoes_financeiras", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "turmas", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "usuarios", :force => true do |t|
     t.string   "login"
     t.string   "password_digest"
     t.datetime "created_at",      :null => false

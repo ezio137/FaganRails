@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Financeiro::TipoContaTest < ActiveSupport::TestCase
+class FuncionalidadePerfilTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

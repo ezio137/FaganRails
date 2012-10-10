@@ -12,11 +12,10 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'sessao', 'sessoes'
   inflect.irregular 'perfil', 'perfis'
-  inflect.irregular 'acao', 'acoes'
-  inflect.irregular 'conta', 'contas'
-  inflect.irregular 'tipo_acao', 'tipos_acao'
+  inflect.irregular 'conta_financeira', 'contas_financeiras'
+  inflect.irregular 'tipo_funcionalidade', 'tipos_funcionalidade'
   inflect.irregular 'perfil_usuario', 'perfis_usuarios'
-  inflect.irregular 'acao_perfil', 'acoes_perfis'
-  inflect.irregular 'tipo_conta', 'tipos_conta'
-  inflect.irregular 'transacao', 'transacoes'
+  inflect.irregular 'funcionalidade_perfil', 'funcionalidades_perfis'
+  inflect.irregular 'tipo_conta_financeira', 'tipos_conta_financeira'
+  inflect.irregular 'transacao_financeira', 'transacoes_financeiras'
 end

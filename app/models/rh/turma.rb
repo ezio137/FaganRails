@@ -1,2 +1,2 @@
-class Rh::Turma < ActiveRecord::Base
+class Turma < ActiveRecord::Base
 end

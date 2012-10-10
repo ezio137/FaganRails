@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    usuario = Sistema::Usuario.find_by_login(params[:login])
+    usuario = Usuario.find_by_login(params[:login])
     if usuario && usuario.authenticate(params[:password])
       session[:usuario_id] = usuario.id
       if session[:url_desejada]

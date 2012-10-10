@@ -1,10 +1,10 @@
-class Sistema::UsuariosController < ApplicationController
+class UsuariosController < ApplicationController
   def new
-    @usuario = Sistema::Usuario.new
+    @usuario = Usuario.new
   end
   
   def create
-    @usuario = Sistema::Usuario.new(params[:sistema_usuario])
+    @usuario = Usuario.new(params[:sistema_usuario])
     if @usuario.save
       redirect_to root_url, :notice => "Usu&aacute;rio criado"
     else

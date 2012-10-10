@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class Sistema::UsuariosHelperTest < ActionView::TestCase
+class UsuariosHelperTest < ActionView::TestCase
 end

@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class Rh::TurmasHelperTest < ActionView::TestCase
+class TurmasHelperTest < ActionView::TestCase
 end
